@@ -1,0 +1,83 @@
+[2025-09-01 19:01:46] OK token=f5167702f6580586ee03787ce10f827f -> luiz@magiccomp.com.br
+[2025-09-01 19:06:28] OK token=172de324d5f4ea1a9403c55ea5034e0a -> luiz@magiccomp.com.br
+[2025-09-01 19:13:48] OK token=6394bb0d484ebc4fc7eed19a67ede1e2 -> luiz@magiccomp.com.br
+[2025-09-01 19:34:19] OK token=0b3c21a7787f73d5ec8aec77936850e6 -> luiz@magiccomp.com.br
+[2025-09-01 20:08:50] OK token=1b6403b97aa840df34c34ce95fc102fa -> luiz@magiccomp.com.br
+[2025-09-01 22:17:39] ERRO token=7da6ccc7c3e30a618d41a4868dbf2c02 => SMTP Error: data not accepted.
+[2025-09-01 22:40:22] ERRO token=e88d8610421b09e015101c5e851dac57 => SMTP Error: data not accepted.
+[2025-09-02 02:57:15] ERRO token=69763b54abe165d4eaedc1ed0335d1dd => SMTP Error: data not accepted.
+[2025-09-02 13:34:52] ERRO token=95e96dc748b8902d31e8e82117744734 => SMTP Error: data not accepted.
+[2025-09-02 13:37:40] ERRO token=dc59efaccc78d46b8f57fb54db7e8ac8 => SMTP Error: data not accepted.
+[2025-09-02 13:44:59] ERRO token=61a50b007f708a289c50d11d4c63933d => SMTP Error: data not accepted.
+[2025-09-02 13:45:18] ERRO token=de0606260cb2967072ebba72fbc5df34 => SMTP Error: data not accepted.
+[2025-09-02 14:10:06] ERRO token=fc433bc0e73d9ef8b1dc7496b60489f0 => SMTP Error: data not accepted.
+[2025-09-02 14:10:34] ERRO token=a499a2754bdc72d152f7dec025475108 => SMTP Error: data not accepted.
+[2025-09-02 14:24:07] ERRO token=4bdb56cee38ed9f2102deb45c21d561a => SMTP Error: data not accepted.
+[2025-09-02 14:25:14] OK token=5af46d578b3d31b6438e9b0955ae5e7d -> mateus@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-02 14:31:21] OK token=2f20c266ccc1b16bbdd58f7e52dc1f53 -> mateus@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-02 14:54:53] OK token=8db776b93756794c71effbdfb1227f25 -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-02 14:56:39] OK token=b89a62516bdefa247fe2020e22efe8e0 -> mateus@magiccomp.com.br
+[2025-09-02 16:30:27] OK token=683b63ff7615b1c8146d4b32912c8f7a -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-02 19:45:04] OK token=e46b5d7b8432f7eaa4ff8be87b110389 -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-02 20:00:53] OK token=0d0dac83eadccaa375d0d06e7bfd8936 -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-02 20:06:02] OK token=6706dc36e3d137b6d9cf8ecac6ea29a4 -> mateus@magiccomp.com.br
+[2025-09-02 20:14:16] OK token=3b3705273e04fdb59b200ad062c9720c -> mateus@magiccomp.com.br
+[2025-09-02 20:21:31] OK token=614cb10d347e9219667e492897dfb20e -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-02 20:23:35] OK token=55f71a529ce4e77c92da26c3980c841f -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-02 20:35:59] OK token=22af3edf496e280ee9b091b3a0568917 -> mateus@magiccomp.com.br
+[2025-09-02 20:36:57] OK token=8394c3efe72cfef5e224e5cb26f2b57a -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-02 20:40:22] OK token=fc2917345eb2a2cf45ba3804359395cf -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-02 21:10:23] OK token=899c7d82a19fcb6afba4ece7f5acfc2b -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-02 21:12:34] OK token=f248ca4fb35d255ee3c705e527417abc -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-02 21:13:58] OK token=92d4974e13ba92cf61a7aa68a4c1203c -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-02 21:37:10] OK token=aac3ff84e90eab95338ecbca5294c135 -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-02 21:46:27] OK token=8dd36eef78f4a0a1bcfdf429c72d8f94 -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-02 21:54:15] OK token=0b49be9aa0a812568485f5c3c1d147bb -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-03 15:16:00] OK token=4b40261e15eed7f71f7419b86bae6bc1 -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-03 15:17:41] OK token=4182683ff42270812f38e0b0adb138ed -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-03 16:29:11] OK token=2f20265dc933aea3ae7691049eb0ef44 -> mateus@magiccomp.com.br
+[2025-09-03 18:19:26] OK token=58c00d58fe64ad101338d2ab043e975d -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-03 18:34:36] OK token=e554c994ff370728412a3f6f730e2667 -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-03 19:09:56] OK token=979a45ffcf2616e5d16889b30c6af212 -> luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-03 19:39:39] OK token=d5203e684f20d80bd17808de5c3d2e63 -> teste@magiccomp.com.br
+[2025-09-05 18:56:09] OK token=cfdba2cc91a87a00963f4d3cf24aba02 -> tarrod@magiccomp.com.br
+[2025-09-05 18:58:43] OK token=44583d80aca823fa6e1879741cb72b48 -> tarrod@magiccomp.com.br,luiz@magiccomp.com.br
+[2025-09-05 19:00:39] OK token=362a300081d40a572b61e6d3b36041b8 -> tarrod@magiccomp.com.br,luiz@magiccomp.com.br
+[2025-09-08 14:17:42] OK token=2ee0856004528720f7987381b23e090c -> tarrod@magiccomp.com.br,luiz@magiccomp.com.br
+[2025-09-08 14:32:19] OK token=b4a033fa2578f5343dceb70620844421 -> tarrod@magiccomp.com.br,luiz@magiccomp.com.br
+[2025-09-08 14:46:35] OK token=483b3fefc9a9751a9229a38931dd38b6 -> tarrod@magiccomp.com.br,luiz@magiccomp.com.br
+[2025-09-08 20:44:40] OK token=f19245c7996a3e944d273fb69c1e9ad8 -> tarrod@magiccomp.com.br,luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-08 20:44:56] OK token=6ec34d516918728ea192baf4489c9a74 -> tarrod@magiccomp.com.br,luiz@magiccomp.com.br,nicolas@magiccomp.com.br
+[2025-09-18 21:18:00] OK token=f2db3fa4949e2d5492e589d7f940e298 -> ti@magiccomp.com.br
+[2025-09-22 13:29:16] OK token=0568c4a51673cf322d0bf4f3f1afdc7a -> luiz@magiccomp.com.brssss,suporte@magiccomp.com.br,luiz@magiccomp.com.br
+[2025-09-22 14:53:13] OK token=88c1ddb7bf599d87e272b3ad1a00b6eb -> luiz@magiccomp.com.brssss,suporte@magiccomp.com.br,luiz@magiccomp.com.br
+[2025-09-22 15:11:42] OK token=98e4841198094fff6b936b251fb2eed5 -> luiz@magiccomp.com.brssss,suporte@magiccomp.com.br,luiz@magiccomp.com.br
+[2025-09-22 15:19:41] OK token=aecc13a3b570e35661c54f9dbd1da8ba -> luiz@magiccomp.com.brssss,suporte@magiccomp.com.br,luiz@magiccomp.com.br
+[2025-09-22 15:22:38] OK token=0c0f7887b1d6a7e8a51d5d5fbe5dfd80 -> luiz@magiccomp.com.brssss,suporte@magiccomp.com.br,luiz@magiccomp.com.br
+[2025-09-22 20:11:41] OK token=f31651bec53199b58f93eeaacd846c0b -> luiz@magiccomp.com.br
+[2025-09-22 20:16:49] OK token=f37a5760540dd4bbbe2643ac37c34d87 -> luiz@magiccomp.com.br
+[2025-09-25 21:53:49] OK token=4dcad0a6d0229ddde858f6dc5c6d478e -> luiz@magiccomp.com.br
+[2025-09-25 21:55:00] OK token=dd80a181bfcaa67f71516899011888ec -> luiz@magiccomp.com.br
+[2025-09-25 21:59:14] OK token=7657aef7b704a798b2a00bdfc8c4d41f -> luiz@magiccomp.com.br
+[2025-09-25 21:59:40] OK token=4ff57c0480ae2b06ddcf97b4fba189bb -> luiz@magiccomp.com.br
+[2025-09-25 21:59:48] OK token=53f56816920a8bd4c4d5b2822f6b7c90 -> luiz@magiccomp.com.br
+[2025-09-26 19:30:07] OK token=d62f4d7e6a4bf5f8e8081f6f0b5f3b5b -> luiz@magiccomp.com.br
+[2025-09-26 20:36:12] OK token=66ec67d5d0d5845389ff58835a782a2e -> luiz@magiccomp.com.br,bruno@magiccomp.com.br
+[2025-09-26 20:36:33] OK token=746e11f7d22b16a1aec8af2a2e1c0a08 -> luiz@magiccomp.com.br,bruno@magiccomp.com.br
+[2025-09-26 20:38:53] OK token=43c81cf63413137b3cd7bbdd903d614a -> luiz@magiccomp.com.br,bruno@magiccomp.com.br
+[2025-09-26 21:26:12] OK token=db03c9905f863380b527f6e8280d7a95 -> luiz@magiccomp.com.br,bruno@magiccomp.com.br
+[2025-09-26 21:30:44] OK token=c77e3d21a849d4b8d8d8f4468bb010e1 -> luiz@magiccomp.com.br,bruno@magiccomp.com.br
+[2025-10-01 15:01:49] OK token=894402e6807c9b8839e7fae059ad1f65 -> luiz@magiccomp.com.br,bruno@magiccomp.com.br
+[2025-10-01 15:10:49] OK token=30bf04b1345e780fda0496891b11e833 -> luiz@magiccomp.com.br,bruno@magiccomp.com.br
+[2025-10-01 15:12:36] OK token=76f4eedddbe7c5d0cd942fa494da5aef -> luiz@magiccomp.com.br,bruno@magiccomp.com.br,suporte@magiccomp.com.br
+[2025-10-01 15:15:33] OK token=a3fc208bf6069db5692156814ec56c8d -> luiz@magiccomp.com.br,bruno@magiccomp.com.br,suporte@magiccomp.com.br
+[2025-10-01 15:21:13] OK token=1ef2d452eda165868d0da03eee7a1c90 -> luiz@magiccomp.com.br,bruno@magiccomp.com.br,suporte@magiccomp.com.br
+[2025-10-01 16:23:16] OK token=5cc5a537c3121d940dfd1de8de73eeb5 -> luiz@magiccomp.com.br,bruno@magiccomp.com.br,suporte@magiccomp.com.br
+[2025-10-01 18:16:26] OK token=7630dc636542fbf6491ff150c698ba16 -> luiz@magiccomp.com.br,bruno@magiccomp.com.br,suporte@magiccomp.com.br
+[2025-10-01 18:39:04] OK token=9b0df7e3247fdea8ea08352258d4a20b -> luiz@magiccomp.com.br,bruno@magiccomp.com.br,suporte@magiccomp.com.br
+[2025-10-01 18:39:44] OK token=ec1ce521bdd2cf5fb1ff22951b5083e2 -> luiz@magiccomp.com.br,bruno@magiccomp.com.br,suporte@magiccomp.com.br
+[2025-10-01 18:55:02] OK token=9cf576762da66abe1c69d4bf55767a45 -> luiz@magiccomp.com.br,bruno@magiccomp.com.br,suporte@magiccomp.com.br
+[2025-10-01 19:21:39] OK token=1b390db40abb6022dea4a6323221a0a3 -> luiz@magiccomp.com.br,bruno@magiccomp.com.br,suporte@magiccomp.com.br
+[2025-10-01 20:19:20] OK token=37e3e02578a6e6b12c971f95533f6824 -> luiz@magiccomp.com.br,bruno@magiccomp.com.br,suporte@magiccomp.com.br
+[2025-10-01 20:19:51] OK token=02d5d120913a3161bc1af888f119677b -> luiz@magiccomp.com.br,bruno@magiccomp.com.br,suporte@magiccomp.com.br
+[2025-10-01 20:20:52] OK token=efc4383aae68899c1c569f80d9809ae5 -> luiz@magiccomp.com.br,bruno@magiccomp.com.br,suporte@magiccomp.com.br

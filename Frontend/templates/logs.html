@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block main %}
+<section class="center-stage" style="grid-column: 1 / 4;">
+    <div class="tech-panel data-panel">
+        <div class="tech-header">
+            <span class="section-title">LOGS COMPLETOS</span>
+            <span class="mono-text" style="font-size:0.75rem; color:var(--text-tertiary);">
+                Página {{ page }}
+            </span>
+        </div>
+
+        <div style="overflow-y:auto; flex:1;">
+            <table class="tech-table">
+                <thead>
+                    <tr>
+                        {% for col in columns %}
+                            <th>{{ col|upper }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in rows %}
+                        <tr>
+                            {% for col in columns %}
+                                <td class="mono-text">
+                                    {{ row[col] }}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="{{ columns|length }}" style="text-align:center; padding:16px; color:var(--text-tertiary);">
+                                Nenhum log encontrado.
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div style="padding: 8px 16px; border-top:1px solid var(--border-dim); display:flex; justify-content:space-between; align-items:center;">
+            <div class="mono-text" style="font-size:0.75rem; color:var(--text-tertiary);">
+                Mostrando até {{ rows|length }} registros (page size {{ per_page }}).
+            </div>
+            <div style="display:flex; gap:8px;">
+                {% if page > 1 %}
+                    <a href="{{ url_for('logs_page', page=page-1) }}" class="toplink">« Anterior</a>
+                {% endif %}
+                {% if rows|length >= per_page %}
+                    <a href="{{ url_for('logs_page', page=page+1) }}" class="toplink">Próxima »</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

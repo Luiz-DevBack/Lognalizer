@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ app_name or "Magiccomp Log Analyzer" }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fontes e Ícones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/dashboard.css') }}">
+</head>
+<body>
+
+<div class="app-container">
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo-area">
+            <i class="ph-fill ph-aperture logo-icon"></i>
+            <span class="logo-text">MAGICCOMP <span style="font-weight:300; opacity:0.6">SRE</span></span>
+        </div>
+
+        <nav style="display:flex; align-items:center; gap:16px; font-size:0.85rem;">
+            <a href="{{ url_for('dashboard') }}"
+               class="toplink {% if request.endpoint == 'dashboard' %}toplink-active{% endif %}">
+                Dashboard
+            </a>
+            <a href="{{ url_for('logs_page') }}"
+               class="toplink {% if request.endpoint == 'logs_page' %}toplink-active{% endif %}">
+                Logs
+            </a>
+            <a href="{{ url_for('upload_logs') }}"
+               class="toplink {% if request.endpoint == 'upload_logs' %}toplink-active{% endif %}">
+                Upload de logs
+            </a>
+
+            <div style="width:1px; height:20px; background:var(--border-dim); margin:0 4px;"></div>
+
+            <span class="mono-text" style="font-size:0.75rem; color:var(--text-tertiary);">
+                <span style="color:var(--color-success)">●</span> API Online
+            </span>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div style="display:flex; gap:20px;">
+            <span>SYSTEM: <span style="color:var(--color-success)">ONLINE</span></span>
+            <span>INGESTION: <span style="color:var(--text-primary)">–</span></span>
+        </div>
+        <div class="mono-text">
+            MAGICCOMP-LOG v1.0.0
+        </div>
+    </footer>
+
+</div>
+
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

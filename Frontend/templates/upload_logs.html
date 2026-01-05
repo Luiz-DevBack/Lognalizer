@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block main %}
+<section class="center-stage" style="grid-column: 1 / 4;">
+    <div class="tech-panel" style="max-width: 600px; margin: 0 auto;">
+        <div class="tech-header">
+            <span class="section-title">Upload de logs para análise</span>
+        </div>
+        <div style="padding: 16px; font-size: 0.9rem;">
+            <p class="text-secondary" style="margin-bottom: 12px;">
+                Arraste um arquivo de log para esta aba ou selecione manualmente abaixo.
+                As linhas serão inseridas na base de dados e aparecerão na dashboard.
+            </p>
+
+            {% if error %}
+                <p style="color: var(--color-danger); margin-bottom: 10px;">{{ error }}</p>
+            {% endif %}
+            {% if success %}
+                <p style="color: var(--color-success); margin-bottom: 10px;">{{ success }}</p>
+            {% endif %}
+
+            <form id="upload-form" method="post" enctype="multipart/form-data">
+                <div style="margin-bottom: 12px;">
+                    <input id="logfile" type="file" name="logfile"
+                           style="width: 100%; color: var(--text-secondary);">
+                </div>
+                <button class="btn-tech" type="submit">
+                    <i class="ph-bold ph-upload-simple"></i> Enviar e analisar
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- OVERLAY DE DRAG & DROP -->
+<div id="drop-overlay" class="drop-overlay">
+    <div class="drop-overlay-inner">
+        <div class="drop-overlay-icon">
+            <i class="ph-fill ph-file-arrow-down"></i>
+        </div>
+        <div class="drop-overlay-title">
+            Adicione qualquer coisa
+        </div>
+        <div class="drop-overlay-sub">
+            Solte o arquivo de log em qualquer lugar desta tela para enviar e analisar.
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function () {
+    const overlay   = document.getElementById('drop-overlay');
+    const form      = document.getElementById('upload-form');
+    const fileInput = document.getElementById('logfile');
+
+    let dragCounter = 0;
+
+    function showOverlay() {
+        overlay.classList.add('visible');
+    }
+
+    function hideOverlay() {
+        overlay.classList.remove('visible');
+    }
+
+    // Evita o navegador abrir o arquivo arrastado
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach((eventName) => {
+        window.addEventListener(eventName, function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        });
+    });
+
+    window.addEventListener('dragenter', function () {
+        dragCounter++;
+        showOverlay();
+    });
+
+    window.addEventListener('dragleave', function () {
+        dragCounter--;
+        if (dragCounter <= 0) {
+            dragCounter = 0;
+            hideOverlay();
+        }
+    });
+
+    window.addEventListener('drop', function (e) {
+        dragCounter = 0;
+        hideOverlay();
+
+        const dt = e.dataTransfer;
+        if (!dt || !dt.files || dt.files.length === 0) {
+            return;
+        }
+
+        // joga os arquivos no input file
+        fileInput.files = dt.files;
+
+        // envia o form automaticamente
+        form.submit();
+    });
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Logs Iframe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/dashboard.css') }}">
+</head>
+<body style="background:transparent;">
+
+<div class="tech-panel data-panel" style="margin: 8px;">
+    <div class="tech-header">
+        <span class="section-title">Logs (iframe)</span>
+    </div>
+    <div style="overflow-y:auto; max-height: 480px;">
+        <table class="tech-table">
+            <thead>
+                <tr>
+                    {% for col in columns %}
+                        <th>{{ col|upper }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                    <tr>
+                        {% for col in columns %}
+                            <td class="mono-text">
+                                {{ row[col] }}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="{{ columns|length }}" style="text-align:center; padding:16px; color:var(--text-tertiary);">
+                            Nenhum log encontrado.
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

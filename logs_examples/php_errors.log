@@ -1,0 +1,6 @@
+[22-Sep-2025 14:53:35 Europe/Berlin] PHP Notice:  cURL error: Connection timed out after 10000 milliseconds in C:\xampp\htdocs\wifi\Project\backend\php\vendor\art-of-wifi\unifi-api-client\src\Client.php on line 168
+[22-Sep-2025 14:53:45 Europe/Berlin] PHP Notice:  cURL error: Connection timed out after 10007 milliseconds in C:\xampp\htdocs\wifi\Project\backend\php\vendor\art-of-wifi\unifi-api-client\src\Client.php on line 193
+[22-Sep-2025 15:12:03 Europe/Berlin] PHP Notice:  cURL error: Connection timed out after 10008 milliseconds in C:\xampp\htdocs\wifi\Project\backend\php\vendor\art-of-wifi\unifi-api-client\src\Client.php on line 168
+[22-Sep-2025 15:12:13 Europe/Berlin] PHP Notice:  cURL error: Connection timed out after 10002 milliseconds in C:\xampp\htdocs\wifi\Project\backend\php\vendor\art-of-wifi\unifi-api-client\src\Client.php on line 193
+[02-Oct-2025 15:59:38 Europe/Berlin] PHP Notice:  cURL error: Failed to connect to 192.168.0.204 port 8443: Connection refused in C:\xampp\htdocs\wifi\Project\backend\php\vendor\art-of-wifi\unifi-api-client\src\Client.php on line 168
+[02-Oct-2025 15:59:40 Europe/Berlin] PHP Notice:  cURL error: Failed to connect to 192.168.0.204 port 8443: Connection refused in C:\xampp\htdocs\wifi\Project\backend\php\vendor\art-of-wifi\unifi-api-client\src\Client.php on line 193

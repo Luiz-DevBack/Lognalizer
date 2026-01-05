@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+    <!-- LEFT COLUMN: GRUPOS (mock por enquanto) -->
+    <aside class="sidebar">
+        <div class="tech-header">
+            <span class="section-title">DIAGNOSTIC GROUPS</span>
+        </div>
+
+        <div class="tech-panel cause-group">
+            <div class="cause-header">
+                <span style="font-weight:600; font-size:0.9rem; color:var(--color-info)">DATABASE</span>
+                <span class="mono-text">–</span>
+            </div>
+            <div class="progress-micro">
+                <div class="progress-fill" style="width: 50%; background: var(--color-info)"></div>
+            </div>
+            <div style="font-size:0.75rem; color:var(--text-tertiary);">Cluster principal</div>
+        </div>
+
+        <div class="tech-panel cause-group">
+            <div class="cause-header">
+                <span style="font-weight:600; font-size:0.9rem; color:var(--color-danger)">SECURITY</span>
+                <span class="mono-text">–</span>
+            </div>
+            <div class="progress-micro">
+                <div class="progress-fill" style="width: 70%; background: var(--color-danger)"></div>
+            </div>
+            <div style="font-size:0.75rem; color:var(--color-danger);">Eventos críticos recentes</div>
+        </div>
+
+        <div class="tech-panel cause-group">
+            <div class="cause-header">
+                <span style="font-weight:600; font-size:0.9rem; color:var(--color-warning)">APPLICATION</span>
+                <span class="mono-text">–</span>
+            </div>
+            <div class="progress-micro">
+                <div class="progress-fill" style="width: 30%; background: var(--color-warning)"></div>
+            </div>
+            <div style="font-size:0.75rem; color:var(--text-tertiary);">Erros de aplicação</div>
+        </div>
+
+        <div class="tech-panel cause-group">
+            <div class="cause-header">
+                <span style="font-weight:600; font-size:0.9rem; color:var(--text-secondary)">HARDWARE</span>
+                <span class="mono-text">–</span>
+            </div>
+            <div class="progress-micro">
+                <div class="progress-fill" style="width: 20%; background: var(--text-secondary)"></div>
+            </div>
+            <div style="font-size:0.75rem; color:var(--text-tertiary);">Capacidade de disco</div>
+        </div>
+    </aside>
+
+    <!-- CENTER COLUMN: SUMMARY + STREAM -->
+    <section class="center-stage">
+        
+        <!-- Top Stats -->
+        <div class="stats-row">
+            <div class="tech-panel stat-card">
+                <div style="display:flex; justify-content:space-between;">
+                    <span class="section-title" style="color:var(--color-info)">TOTAL LOGS</span>
+                    <i class="ph ph-database" style="color:var(--color-info)"></i>
+                </div>
+                <div>
+                    <div class="stat-value">{{ summary.total }}</div>
+                    <div class="stat-sub">
+                        Janela:
+                        <span class="mono-text">{{ summary.first_ts or '--' }}</span> →
+                        <span class="mono-text">{{ summary.last_ts or '--' }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tech-panel stat-card">
+                <div style="display:flex; justify-content:space-between;">
+                    <span class="section-title" style="color:var(--color-danger)">ERRORS</span>
+                    <i class="ph ph-warning-circle" style="color:var(--color-danger)"></i>
+                </div>
+                <div>
+                    <div class="stat-value" style="color:var(--color-danger)">{{ summary.errors }}</div>
+                    <div class="stat-sub">Eventos nível ERROR</div>
+                </div>
+            </div>
+            <div class="tech-panel stat-card">
+                <div style="display:flex; justify-content:space-between;">
+                    <span class="section-title" style="color:var(--color-warning)">WARNINGS</span>
+                    <i class="ph ph-activity" style="color:var(--color-warning)"></i>
+                </div>
+                <div>
+                    <div class="stat-value" style="color:var(--color-warning)">{{ summary.warnings }}</div>
+                    <div class="stat-sub">Eventos nível WARNING</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stream de eventos -->
+        <div class="tech-panel data-panel">
+            <div class="tech-header">
+                <span class="section-title">STREAM DE EVENTOS</span>
+                <div style="display:flex; gap:10px;">
+                    <span class="badge-outline" style="color:var(--color-danger)">LATEST</span>
+                </div>
+            </div>
+            <div style="overflow-y:auto; flex:1;">
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>TIMESTAMP</th>
+                            <th>NÍVEL / MENSAGEM</th>
+                            <th>HOST / SOURCE</th>
+                            <th>CAUSA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in event_rows %}
+                            <tr>
+                                <td class="mono-text">
+                                    {{ row.timestamp or row["timestamp"] or '--' }}
+                                </td>
+                                <td>
+                                    <div style="font-weight:600; color:var(--text-primary)">
+                                        {{ (row.level or row["level"] or "INFO") | upper }}
+                                    </div>
+                                    <div style="font-size:0.75rem; color:var(--text-tertiary); max-width:420px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+                                        {{ row.message or row["message"] }}
+                                    </div>
+                                </td>
+                                <td class="mono-text"
+                                    style="color:
+                                        {% if row.cause_group == 'banco_dados' %}var(--color-info)
+                                        {% elif row.cause_group == 'seguranca' %}var(--color-danger)
+                                        {% elif row.cause_group == 'aplicacao' %}var(--color-warning)
+                                        {% else %}var(--text-secondary){% endif %}">
+                                    {{ row.host or row["host"] or '—' }}
+                                    <span style="display:block; font-size:0.7rem; color:var(--text-tertiary);">
+                                        {{ row.source or row["source"] }}
+                                    </span>
+                                </td>
+                                <td>
+                                    <div style="font-size:0.75rem; color:var(--text-secondary);">
+                                        {{ row.cause_reason or row["cause_reason"] or '—' }}
+                                    </div>
+                                    <div style="font-size:0.7rem; color:var(--text-tertiary);">
+                                        {{ row.cause_action or row["cause_action"] or '' }}
+                                    </div>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="4" style="text-align:center; padding:16px; color:var(--text-tertiary);">
+                                    Nenhum log encontrado.
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- RIGHT COLUMN: PLAYBOOK (AGORA FUNCIONAL) -->
+    <aside class="sidebar">
+        <div class="tech-header">
+            <span class="section-title">RESPONSE PLAYBOOK</span>
+        </div>
+
+        <!-- Action 1 -->
+        <div class="tech-panel action-item urgent">
+            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                <span style="font-weight:700; font-size:0.9rem; color:var(--color-danger)">MITIGATE DDOS</span>
+                <span class="mono-text" style="font-size:0.7rem; color:var(--text-tertiary)">#SEC-001</span>
+            </div>
+            <p style="font-size:0.8rem; color:var(--text-secondary); line-height:1.4;">
+                Simulação: registra ação de bloqueio de sub-rede suspeita no log.
+            </p>
+            <div class="cmd-line">
+                &gt; iptables -A INPUT -s 45.22.0.0/16 -j DROP
+            </div>
+            <br>
+            <form method="post" action="{{ url_for('action_execute_block') }}">
+                <button class="btn-tech" style="border-color:var(--color-danger); color:var(--color-danger)">
+                    <i class="ph-bold ph-lightning"></i> EXECUTE BLOCK
+                </button>
+            </form>
+        </div>
+
+        <!-- Action 2 -->
+        <div class="tech-panel action-item info">
+            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                <span style="font-weight:700; font-size:0.9rem; color:var(--color-info)">DB SCALE OUT</span>
+                <span class="mono-text" style="font-size:0.7rem; color:var(--text-tertiary)">#DB-094</span>
+            </div>
+            <p style="font-size:0.8rem; color:var(--text-secondary); line-height:1.4;">
+                Simulação: registra intenção de provisionar read replica no cluster de banco.
+            </p>
+            <div class="cmd-line">
+                &gt; aws rds modify-db-instance --apply-immediately
+            </div>
+            <br>
+            <form method="post" action="{{ url_for('action_db_scale_out') }}">
+                <button class="btn-tech">
+                    <i class="ph-bold ph-plus"></i> PROVISION NODE
+                </button>
+            </form>
+        </div>
+
+        <!-- Action 3 -->
+        <div class="tech-panel action-item warning">
+            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                <span style="font-weight:700; font-size:0.9rem; color:var(--color-warning)">DISK CLEANUP</span>
+                <span class="mono-text" style="font-size:0.7rem; color:var(--text-tertiary)">#SYS-022</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px; margin: 10px 0;">
+                <div style="flex:1; height:6px; background:var(--bg-app); border-radius:3px;">
+                    <div style="width:96%; height:100%; background:var(--color-warning); border-radius:3px;"></div>
+                </div>
+                <span class="mono-text" style="font-size:0.75rem;">96%</span>
+            </div>
+            <form method="post" action="{{ url_for('action_disk_cleanup') }}">
+                <button class="btn-tech">
+                    <i class="ph-bold ph-broom"></i> RUN CLEANER
+                </button>
+            </form>
+        </div>
+    </aside>
+
+{% endblock %}

@@ -1,0 +1,335 @@
+:root {
+    /* --- TITANIUM PALETTE (Slate/Cyan/Tech) --- */
+
+    /* Backgrounds */
+    --bg-app: #0b1120;       /* Darkest Slate */
+    --bg-panel: #151e32;     /* Panel BG */
+    --bg-header: #0f172a;    /* Header BG */
+
+    /* Borders */
+    --border-dim: #1e293b;
+    --border-light: #334155;
+
+    /* Text */
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-tertiary: #64748b;
+
+    /* Functional Colors */
+    --color-info: #38bdf8;    /* Sky Blue */
+    --color-success: #22c55e; /* Emerald */
+    --color-warning: #fbbf24; /* Amber */
+    --color-danger: #ef4444;  /* Red */
+    --color-neutral: #cbd5e1;
+
+    /* Styling */
+    --radius-std: 6px;
+    --grid-gap: 20px;
+}
+
+/* Reset & base */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-app);
+    /* Technical Grid Background */
+    background-image:
+        linear-gradient(rgba(30, 41, 59, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 41, 59, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color: var(--text-primary);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* App container */
+
+.app-container {
+    display: grid;
+    grid-template-rows: 60px 1fr 40px;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Header */
+
+header {
+    background: var(--bg-header);
+    border-bottom: 1px solid var(--border-dim);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    color: var(--color-info);
+    font-size: 1.5rem;
+}
+
+.logo-text {
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.5px;
+}
+
+/* Top nav links */
+
+.toplink {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    transition: 0.2s all;
+}
+
+.toplink:hover {
+    border-color: var(--border-light);
+    color: var(--text-primary);
+    background: rgba(15, 23, 42, 0.8);
+}
+
+.toplink-active {
+    border-color: var(--color-info);
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--text-primary);
+}
+
+/* Main layout */
+
+main {
+    display: grid;
+    grid-template-columns: 280px 1fr 320px;
+    gap: 24px;
+    padding: 24px;
+    overflow: hidden;
+}
+
+/* Sidebars */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+}
+
+/* Panels */
+
+.tech-panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-dim);
+    padding: 10px 15px;
+    border-radius: var(--radius-std);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.tech-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--border-dim);
+    background: rgba(15, 23, 42, 0.8);
+}
+
+.section-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    font-weight: 700;
+}
+
+/* Typography utils */
+
+.mono-text {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -1px;
+}
+
+.stat-sub {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+/* Badges */
+
+.badge-outline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+/* Center stage */
+
+.center-stage {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+/* Stats row */
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    height: 120px;
+}
+
+.stat-card {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Table */
+
+.data-panel {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.tech-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.tech-table th {
+    text-align: left;
+    padding: 12px 16px;
+    color: var(--text-tertiary);
+    border-bottom: 1px solid var(--border-dim);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+}
+
+.tech-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-dim);
+    color: var(--text-secondary);
+}
+
+.tech-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-primary);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+/* Buttons */
+
+.btn-tech {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+    padding: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s;
+}
+
+.btn-tech:hover {
+    background: var(--text-primary);
+    color: var(--bg-app);
+}
+
+/* Footer */
+
+footer {
+    background: var(--bg-header);
+    border-top: 1px solid var(--border-dim);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+}
+
+/* ==== Drag & Drop Overlay ==== */
+
+.drop-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.95);
+    border: 2px dashed rgba(148, 163, 184, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.drop-overlay.visible {
+    display: flex;
+}
+
+.drop-overlay-inner {
+    text-align: center;
+    max-width: 480px;
+    padding: 32px;
+    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.9);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+.drop-overlay-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    color: var(--color-info);
+}
+
+.drop-overlay-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.drop-overlay-sub {
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+}
