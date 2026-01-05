@@ -2,3 +2,22 @@ data/logs.db
 *.db
 __pycache__/
 .env
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtualenv
+venv/
+.env
+
+# Banco
+data/*.db
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
